@@ -37,20 +37,10 @@
     <a-scene background="color: #ECECEC">
       
       <a-assets>
-        <a-asset-item id="tank" src="https://hsudml.github.io/3D-Model-Template/scene.gltf"></a-asset-item>
-        
-        <a-timeline id="myTimeline">
-          <a-timeline-animation select="#text1" name="moveleft"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="movedown"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="moveright"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="moveup"></a-timeline-animation>
-        </a-timeline>
-        
-        <a-mixin id="text"
-          animation__moveleft="property: position; from: 4 3.75 0; to: -4 3.75 0; dur: 1000;"
-          animation__movedown="property: position; from: -4 3.75 0; to: -4 1 0; dur: 1000;"
-          animation__moveright="property: position; from: -4 1 0; to: 4 1 0; dur: 1000;"
-          animation__moveup="property: position; from: 4 1 0; to: 4 3.75 0; dur: 1000;"></a-mixin>
+        <a-asset-item id="cube" src="https://hsudml.github.io/explodingCube/scene.gltf"></a-asset-item>
+        <!-- GLB Packer app: https://glb-packer.glitch.me/ -->
+        <!-- Blog with code and examples: https://learn.framevr.io/project1/part3 -->
+        <!-- Drag & Drop Viewer: https://gltf-viewer.donmccurdy.com/ -->
         
       </a-assets>
       
@@ -61,17 +51,23 @@
       <a-light type="ambient" color="#999999"></a-light>
       <a-light type="point" intensity="0.25" position="4.5 15 4"></a-light>
       
-      <a-entity gltf-model="#tank" 
-                position="-12 0 -6" 
+      <!--<a-gltf-model position="0 0 -4" 
+                    rotation="0 0 0" 
+                    scale="0.025 0.025 0.025" 
+                    src="https://hsudml.github.io/explodingCube/scene.gltf"
+                    play-all-model-animations="loop: once"
+                    animation-mixer></a-gltf-model>-->
+      
+      <a-entity gltf-model="#cube" 
+                position="0 0 -6" 
                 scale="0.025 0.025 0.025" 
-                rotation="0 -90 0" 
-                animation="property: position; to: 12 0 -6; dur: 12000; loop: true;"
+                rotation="0 0 0" 
                 animation-mixer
-                play-all-model-animations 
+                play-all-model-animations
                 modify-materials></a-entity>
       
       <!-- THE TEXT AT THE TOP OF THE SCENE -->
-      <a-text value="Vege Tank" 
+      <a-text value="The Breaking Stone" 
               width="20"
               align="center" 
               color="white" 
@@ -82,7 +78,7 @@
       </a-text>
       
       <!-- THE TEXT AT THE BOTTOM OF THE SCENE -->
-      <a-text value="CC BY Willy Decarpentrie - https://sketchfab.com/skudgee"
+      <a-text value="CC BY homer_ron - https://sketchfab.com/homer_ron"
               width="4" 
               align="center"
               color="yellow"
